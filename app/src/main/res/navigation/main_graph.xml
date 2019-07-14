@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/homeFragment">
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="reyst.gsihome.research.nc.ui.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_branch1"
+            app:destination="@id/fragment1" />
+        <action
+            android:id="@+id/action_branch2"
+            app:destination="@id/fragment2" />
+        <action
+            android:id="@+id/action_branch3_step1"
+            app:destination="@id/fragment31" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment1"
+        android:name="reyst.gsihome.research.nc.ui.branch1.Fragment1"
+        android:label="fragment1"
+        tools:layout="@layout/fragment1" />
+    <fragment
+        android:id="@+id/fragment2"
+        android:name="reyst.gsihome.research.nc.ui.branch2.Fragment2"
+        android:label="fragment2"
+        tools:layout="@layout/fragment2" />
+    <fragment
+        android:id="@+id/fragment31"
+        android:name="reyst.gsihome.research.nc.ui.branch3.Fragment31"
+        android:label="fragment31"
+        tools:layout="@layout/fragment31" >
+        <action
+            android:id="@+id/action_branch3_step2"
+            app:destination="@id/fragment32" >
+            <argument android:defaultValue="empty@localhost"
+                android:name="email" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/fragment32"
+        android:name="reyst.gsihome.research.nc.ui.branch3.Fragment32"
+        android:label="fragment32"
+        tools:layout="@layout/fragment32" >
+        <action
+            android:id="@+id/action_confirmed"
+            app:destination="@id/activity2"
+            app:popUpTo="@+id/homeFragment" >
+            <argument android:defaultValue="empty@localhost" android:name="email" />
+        </action>
+        <argument
+            android:name="email"
+            app:argType="string"
+            android:defaultValue="empty@localhost" />
+    </fragment>
+    <activity
+        android:id="@+id/activity2"
+        android:name="reyst.gsihome.research.nc.ui.branch3.Activity2"
+        android:label="activity_2"
+        tools:layout="@layout/activity_2" >
+        <argument
+            android:name="email"
+            app:argType="string" />
+    </activity>
+</navigation>
