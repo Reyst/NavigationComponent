@@ -23,7 +23,11 @@
         android:id="@+id/fragment1"
         android:name="reyst.gsihome.research.nc.ui.branch1.Fragment1"
         android:label="fragment1"
-        tools:layout="@layout/fragment1" />
+        tools:layout="@layout/fragment1" >
+        <argument
+            android:name="data"
+            app:argType="reyst.gsihome.research.nc.ui.AbstractData" />
+    </fragment>
     <fragment
         android:id="@+id/fragment2"
         android:name="reyst.gsihome.research.nc.ui.branch2.Fragment2"
