@@ -15,9 +15,6 @@
         <action
             android:id="@+id/action_branch2"
             app:destination="@id/fragment2" />
-        <action
-            android:id="@+id/action_branch3_step1"
-            app:destination="@id/fragment31" />
     </fragment>
     <fragment
         android:id="@+id/fragment1"
@@ -53,8 +50,12 @@
         <action
             android:id="@+id/action_confirmed"
             app:destination="@id/activity2"
-            app:popUpTo="@+id/homeFragment" >
-            <argument android:defaultValue="empty@localhost" android:name="email" />
+            app:popUpTo="@id/fragment31"
+            >
+            <argument
+                android:name="email"
+                android:defaultValue="empty@localhost"
+                />
         </action>
         <argument
             android:name="email"

@@ -8,13 +8,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import androidx.core.os.bundleOf
 import androidx.navigation.findNavController
 
 import reyst.gsihome.research.nc.R
 
 class Fragment32 : Fragment() {
 
-    private val email: String by lazy { Fragment32Args.fromBundle(arguments!!).email }
+    private val email: String by lazy { arguments?.getString("email").orEmpty() }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment32, container, false)
@@ -27,7 +28,8 @@ class Fragment32 : Fragment() {
 
         val btnConfirm: Button = view.findViewById(R.id.confirm)
         btnConfirm.setOnClickListener {
-            it.findNavController().navigate(Fragment32Directions.actionConfirmed(email))
+//            it.findNavController().navigate(Fragment32Directions.actionConfirmed(email))
+            it.findNavController().navigate(R.id.action_confirmed, bundleOf("email" to email))
         }
 
         val btnCancel: Button = view.findViewById(R.id.cancel)

@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import androidx.core.os.bundleOf
 import androidx.navigation.findNavController
 
 import reyst.gsihome.research.nc.R
@@ -27,8 +28,8 @@ class Fragment31 : Fragment() {
         val btnCancel: Button = view.findViewById(R.id.cancel)
 
         btnSubmit.setOnClickListener {
-            val action = Fragment31Directions.actionBranch3Step2(input.text.toString())
-            it.findNavController().navigate(action)
+//            val action = Fragment31Directions.actionBranch3Step2(input.text.toString())
+            it.findNavController().navigate(R.id.action_branch3_step2, bundleOf("email" to input.text.toString()))
         }
 
         btnCancel.setOnClickListener { it.findNavController().popBackStack(R.id.homeFragment, false) }

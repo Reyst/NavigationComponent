@@ -24,11 +24,11 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val btn1: Button = view.findViewById(R.id.btn1)
         val btn2: Button = view.findViewById(R.id.btn2)
-        val btn3: Button = view.findViewById(R.id.btn3)
+//        val btn3: Button = view.findViewById(R.id.btn3)
 
         btn1.setOnClickListener { navigateToBranch1(it) }
         btn2.setOnClickListener { it.findNavController().navigate(R.id.action_branch2) }
-        btn3.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_branch3_step1))
+//        btn3.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_branch3_step1))
 
     }
 

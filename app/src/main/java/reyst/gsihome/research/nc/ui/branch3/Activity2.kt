@@ -7,7 +7,8 @@ import reyst.gsihome.research.nc.R
 
 class Activity2 : AppCompatActivity() {
 
-    private val email: String by lazy { Activity2Args.fromBundle(intent.extras!!).email }
+//    private val email: String by lazy { Activity2Args.fromBundle(intent.extras!!).email }
+    private val email: String by lazy { intent.extras?.getString("email").orEmpty() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
